@@ -1,6 +1,6 @@
-# sysadmin @ labontese <!-- 👋 -->
+# tech-visionary @ labontese <!-- 👋 -->
 
-Infrastructure Architect and Developer focused on high-availability, hybrid-cloud environments, and regulatory-compliant software ecosystems. I manage a geo-redundant infrastructure across Hetzner (Production) and a sophisticated Homelab (Hot-Standby).
+Chief Innovation Architect and Developer focused on high-availability, hybrid-infrastructure environments, and regulatory-compliant software ecosystems. I manage a geo-redundant infrastructure across Hetzner (Production) and a sophisticated Homelab (Hot-Standby).
 
 ## 📡 Enterprise Networking & Infrastructure
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
