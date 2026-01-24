@@ -26,13 +26,14 @@ graph TD
     CF --> HZ
     CF --> PF
     PF --> JN
-    JN --- PV
+    JN --- LB6["Quanta LB6M (10GbE Core)"]
+    LB6 --- PV
     JN --- OW
     HZ -. "Streaming Replication (PostgreSQL)" .-> PV
 ```
 
 ### ⚡ Technical Specifications
-- **Core Switching**: Juniper EX4200-48T (48x 1GbE, 2x 10GbE SFP+ DAC)
+- **Core Switching**: Juniper EX4200-48T (L3 Core) & Quanta LB6M (24x 10GbE SFP+ Backbone)
 - **Virtualization**: Multi-node Proxmox VE Cluster with Proxmox Backup Server (PBS) integration.
 - **VLAN Matrix**:
     - `VLAN 1`: Management (Native)
