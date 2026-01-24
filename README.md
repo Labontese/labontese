@@ -18,7 +18,7 @@ graph TD
 
     subgraph "Hot-Standby (Homelab)"
         PF["pfSense Gateway"]
-        JN["Juniper EX4200-48T (Core)"]
+        JN["Juniper EX4200 Virtual Chassis (VC Core)"]
         PV["Proxmox Cluster (R730xd | T430 | R240)"]
         OW["OpenWrt WAP (VLAN Bridging)"]
     end
@@ -33,7 +33,7 @@ graph TD
 ```
 
 ### ⚡ Technical Specifications
-- **Core Switching**: Juniper EX4200-48T (L3 Core) & Quanta LB6M (24x 10GbE SFP+ Backbone)
+- **Core Switching**: Juniper EX4200 Virtual Chassis (Dual-Switch Backplane) & Quanta LB6M (24x 10GbE SFP+ Backbone)
 - **Virtualization**: Multi-node Proxmox VE Cluster with Proxmox Backup Server (PBS) integration.
 - **VLAN Matrix**:
     - `VLAN 1`: Management (Native)
