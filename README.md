@@ -13,48 +13,33 @@ A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802
 ### 🏗️ Global Architecture
 ```mermaid
 graph TD
-    %% Styling Definitions
-    classDef cloud fill:#24292e,stroke:#3b82f6,stroke-width:2px,color:#fff;
-    classDef hetzner fill:#24292e,stroke:#f59e0b,stroke-width:2px,color:#fff;
-    classDef homelab fill:#24292e,stroke:#10b981,stroke-width:2px,color:#fff;
-    classDef net fill:#1f2428,stroke:#8b949e,stroke-width:1px,color:#c9d1d9,stroke-dasharray: 5 5;
-
-    %% External Scope
-    subgraph EXT ["🌐 External Scopes"]
-        direction TB
-        CF(("☁️ Cloudflare<br/>(WAF / CDN / Tunnel)")):::cloud
+    subgraph EXT ["External Scopes"]
+        CF(("Cloudflare (WAF/CDN)"))
     end
 
-    %% Production Scope
-    subgraph HZ_LOC ["🏢 Production (Hetzner)"]
-        HZ[("🚀 Primary Docker Node<br/>i5-13500 | 64GB")]:::hetzner
+    subgraph HZ_LOC ["Production (Hetzner)"]
+        HZ[("Primary Docker Node")]
     end
 
-    %% Homelab Scope
-    subgraph HL_LOC ["🏠 Hot-Standby (Homelab)"]
-        direction TB
-        PF["🛡️ pfSense Gateway"]:::homelab
-        JN["🔌 Juniper EX4200 VC<br/>(Core Switching)"]:::homelab
+    subgraph HL_LOC ["Hot-Standby (Homelab)"]
+        PF["pfSense Gateway"]
+        JN["Juniper EX4200 VC"]
         
-        subgraph L2 ["⚡ Layer 2 Backbone"]
-            direction LR
-            LB6["⚙️ Quanta LB6M<br/>(10GbE Core)"]:::net
+        subgraph L2 ["Layer 2 Backbone"]
+            LB6["Quanta LB6M"]
         end
         
-        PV[("📦 Proxmox Cluster<br/>R730xd | T430 | R240")]:::homelab
-        OW["📶 OpenWrt WAP<br/>(VLAN Bridging)"]:::net
+        PV[("Proxmox Cluster")]
+        OW["OpenWrt WAP"]
     end
 
-    %% Relationships
-    CF ==> HZ
-    CF ==> PF
+    CF --> HZ
+    CF --> PF
     PF --> JN
-    JN === LB6
-    LB6 === PV
+    JN --- LB6
+    LB6 --- PV
     JN -.-> OW
-    
-    %% Replication Link
-    HZ -. "🐘 Streaming Replication<br/>(PostgreSQL)" .-> PV
+    HZ -. "PostgreSQL Replication" .-> PV
 ```
 
 ### ⚡ Technical Specifications
