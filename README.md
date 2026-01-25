@@ -51,10 +51,13 @@ graph TD
 - **IPAM**: Centralized management via phpIPAM.
 - **Version Control**: Self-hosted Forgejo instance.
 
-## 📊 Stats & Activity
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=labontese&layout=compact&theme=radical)
-
-
-![Labontese's GitHub stats](https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=radical)
+<div align="center">
+  <a href="https://github.com/labontese">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=labontese&layout=compact&theme=radical&card_width=400" alt="Top Languages" width="48%" />
+  </a>
+  <a href="https://github.com/labontese">
+    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=radical&card_width=400" alt="GitHub Stats" width="48%" />
+  </a>
+</div>
 
 ---
