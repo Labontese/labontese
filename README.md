@@ -52,7 +52,7 @@ graph TD
 - **Version Control**: Self-hosted Forgejo instance.
 
 ## 📊 Stats & Activity
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=radical)
+![GitHub Streak](https://streak-stats.demolab.com/?user=labontese&theme=radical)
 
 ![Labontese's GitHub stats](https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=radical)
 
