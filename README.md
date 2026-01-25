@@ -2,7 +2,12 @@
 
 Chief Innovation Architect and Developer focused on high-availability, hybrid-infrastructure environments, and regulatory-compliant software ecosystems. I manage a geo-redundant infrastructure across Hetzner (Production) and a sophisticated Homelab (Hot-Standby).
 
-## 📡 Enterprise Networking & Infrastructure
+## � Tech Stack
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git" />
+</div>
+
+## �📡 Enterprise Networking & Infrastructure
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
 ### 🏗️ Global Architecture
@@ -33,8 +38,8 @@ graph TD
 ```
 
 ### ⚡ Technical Specifications
-- **Core Switching**: Juniper EX4200 Virtual Chassis (Dual-Switch Backplane) & Quanta LB6M (24x 10GbE SFP+ Backbone)
-- **Virtualization**: Multi-node Proxmox VE Cluster with Proxmox Backup Server (PBS) integration.
+- **Core Switching**: ![Juniper](https://img.shields.io/badge/Juniper-EX4200_VC-blue?style=flat-square&logo=junipernetworks&logoColor=white) ![Quanta](https://img.shields.io/badge/Quanta-LB6M-black?style=flat-square) (24x 10GbE SFP+)
+- **Virtualization**: ![Proxmox](https://img.shields.io/badge/Proxmox_VE-Cluster-E57000?style=flat-square&logo=proxmox&logoColor=white) with ![PBS](https://img.shields.io/badge/Proxmox_Backup-Server-E57000?style=flat-square&logo=proxmox&logoColor=white)
 - **VLAN Matrix**:
     - `VLAN 1`: Management (Native)
     - `VLAN 10`: Enterprise Servers (Proxmox, TrueNAS)
@@ -42,14 +47,14 @@ graph TD
     - `VLAN 50/70/80`: Infrastructure & Lab Scopes
     - `VLAN 60/65`: Secure Trusted Users & Guest Access
     - `VLAN 90`: Isolated Corporate Infra (HolmDigital)
-- **Compute Stack**: K3s Kubernetes Cluster, dedicated Docker hosts, and n8n workflow engines.
+- **Compute Stack**: ![K3s](https://img.shields.io/badge/Kubernetes-K3s-326CE5?style=flat-square&logo=kubernetes&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-Swarm/Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
 ## 🛠️ Enterprise Software Stack
-- **Observability**: GLOV Stack (VictoriaMetrics, Grafana, Loki, Grafana Alloy) for full-stack telemetry.
-- **Security & IAM**: Wazuh (SIEM/XDR), OpenLDAP (Directory Services).
-- **Automation**: Ansible-based IaC, tailored PowerShell routing scripts (VPN bypass logic).
-- **IPAM**: Centralized management via phpIPAM.
-- **Version Control**: Self-hosted Forgejo instance.
+- **Observability**: ![Grafana](https://img.shields.io/badge/Grafana-Stack-F46800?style=flat-square&logo=grafana&logoColor=white) (VictoriaMetrics, Loki, Alloy)
+- **Security & IAM**: ![Wazuh](https://img.shields.io/badge/Wazuh-SIEM/XDR-blue?style=flat-square) ![OpenLDAP](https://img.shields.io/badge/OpenLDAP-Directory-black?style=flat-square)
+- **Automation**: ![Ansible](https://img.shields.io/badge/Ansible-IaC-EE0000?style=flat-square&logo=ansible&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-Automation-5391FE?style=flat-square&logo=powershell&logoColor=white)
+- **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
+- **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
 
 <div align="center">
   <a href="https://github.com/labontese">
