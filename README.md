@@ -12,7 +12,7 @@ A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802
 
 ### 🏗️ Global Architecture
 ```mermaid
-flowchart TD
+graph TD
     %% Styling Definitions
     classDef cloud fill:#24292e,stroke:#3b82f6,stroke-width:2px,color:#fff;
     classDef hetzner fill:#24292e,stroke:#f59e0b,stroke-width:2px,color:#fff;
