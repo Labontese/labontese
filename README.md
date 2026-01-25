@@ -11,36 +11,7 @@ Chief Innovation Architect and Developer focused on high-availability, hybrid-in
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
 ### 🏗️ Global Architecture
-```mermaid
-graph TD
-    subgraph EXT ["External Scopes"]
-        CF(("Cloudflare (WAF/CDN)"))
-    end
-
-    subgraph HZ_LOC ["Production (Hetzner)"]
-        HZ[("Primary Docker Node")]
-    end
-
-    subgraph HL_LOC ["Hot-Standby (Homelab)"]
-        PF["pfSense Gateway"]
-        JN["Juniper EX4200 VC"]
-        
-        subgraph L2 ["Layer 2 Backbone"]
-            LB6["Quanta LB6M"]
-        end
-        
-        PV[("Proxmox Cluster")]
-        OW["OpenWrt WAP"]
-    end
-
-    CF --> HZ
-    CF --> PF
-    PF --> JN
-    JN --- LB6
-    LB6 --- PV
-    JN -.-> OW
-    HZ -. "PostgreSQL Replication" .-> PV
-```
+![Global Architecture](assets/network_diagram.png)
 
 ### ⚡ Technical Specifications
 - **Core Switching**: ![Juniper](https://img.shields.io/badge/Juniper-EX4200_VC-blue?style=flat-square&logo=junipernetworks&logoColor=white) ![Quanta](https://img.shields.io/badge/Quanta-LB6M-black?style=flat-square) (24x 10GbE SFP+)
