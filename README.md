@@ -52,7 +52,7 @@ graph TD
 - **Version Control**: Self-hosted Forgejo instance.
 
 ## 📊 Stats & Activity
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=labontese&layout=compact&theme=radical)
+
 
 ![Labontese's GitHub stats](https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=radical)
 
