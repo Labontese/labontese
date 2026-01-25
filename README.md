@@ -4,7 +4,7 @@ Chief Innovation Architect and Developer focused on high-availability, hybrid-in
 
 ## � Tech Stack
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git" />
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git,nginx,react" />
 </div>
 
 ## �📡 Enterprise Networking & Infrastructure
