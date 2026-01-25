@@ -11,7 +11,7 @@ Chief Innovation Architect and Developer focused on high-availability, hybrid-in
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
 ### 🏗️ Global Architecture
-![Global Architecture](assets/topology_diagram_v2.png)
+![Global Architecture](assets/topology_diagram_v4.png)
 
 ### ⚡ Technical Specifications
 - **Core Switching**: ![Juniper](https://img.shields.io/badge/Juniper-EX4200_VC-blue?style=flat-square&logo=junipernetworks&logoColor=white) ![Quanta](https://img.shields.io/badge/Quanta-LB6M-black?style=flat-square) (24x 10GbE SFP+)
