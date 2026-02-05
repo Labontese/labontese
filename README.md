@@ -38,6 +38,12 @@
 > **Lead Developer** @ [`github.com/holmdigital`](https://github.com/holmdigital)  
 > *Orchestrating the sovereign cloud initiative and open standards.*
 
+<div align="center">
+  <a href="https://github.com/holmdigital">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=holmdigital&theme=dark&hide_border=true&background=0d1117&card_width=800" alt="HolmDigital Streak" />
+  </a>
+</div>
+
 <br/>
 
 <details>
