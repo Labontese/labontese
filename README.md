@@ -45,10 +45,10 @@ A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802
 
 <div align="center">
   <a href="https://github.com/labontese">
-    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117" alt="GitHub Stats" height="180" />
+    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" height="180" />
   </a>
   <a href="https://github.com/labontese">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=tokyonight&hide_border=true&background=0d1117" alt="Streak Stats" height="180" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=dark&hide_border=true" alt="Streak Stats" height="180" />
   </a>
 </div>
 
