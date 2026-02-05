@@ -16,7 +16,7 @@
       <h3>📊 Traffic Analysis (Status)</h3>
       <div align="center">
         <a href="https://github.com/labontese">
-          <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true" height="135" />
+          <img src="https://github-stats-terminal-style.vercel.app/api?username=labontese&theme=tokyonight&hide_border=true" height="135" />
         </a>
       </div>
     </td>
