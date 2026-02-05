@@ -1,7 +1,5 @@
 <div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7&width=435&lines=Initializing+labontese.sys...;Loading+Architect+Modules...;System+Online." alt="Typing SVG" />
-  </a>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7&width=435&lines=Initializing+labontese.sys...;Loading+Architect+Modules...;System+Online.&center=true&vCenter=true" alt="Typing SVG" />
 </div>
 
 <br />
@@ -18,7 +16,7 @@
       <h3>📊 Traffic Analysis (Status)</h3>
       <div align="center">
         <a href="https://github.com/labontese">
-          <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&count_private=true" height="135" />
+          <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true" height="135" />
         </a>
       </div>
     </td>
