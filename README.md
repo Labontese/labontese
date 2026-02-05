@@ -41,12 +41,14 @@ A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802
 - **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
 - **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
 
+## 📊 Terminal Metrics
+
 <div align="center">
   <a href="https://github.com/labontese">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=labontese&layout=compact&theme=radical&card_width=400" alt="Top Languages" width="48%" />
+    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=gotham&hide_border=true&bg_color=0d1117" alt="GitHub Stats" height="180" />
   </a>
   <a href="https://github.com/labontese">
-    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=radical&card_width=400" alt="GitHub Stats" width="48%" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=gotham&hide_border=true&background=0d1117" alt="Streak Stats" height="180" />
   </a>
 </div>
 
