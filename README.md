@@ -13,10 +13,10 @@
       </div>
     </td>
     <td valign="top" width="50%">
-      <h3>📊 Traffic Analysis (Status)</h3>
+      <h3>🔥 Contribution Integrity (Streak)</h3>
       <div align="center">
         <a href="https://github.com/labontese">
-          <img src="https://github-stats-terminal-style.vercel.app/api?username=labontese&theme=terminal&hide_border=true" height="135" />
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=dark&hide_border=true&background=0d1117" height="135" />
         </a>
       </div>
     </td>
