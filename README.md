@@ -40,7 +40,7 @@
 
 <div align="center">
   <a href="https://github.com/holmdigital">
-    <img src="https://github-readme-stats.vercel.app/api?username=holmdigital&show_icons=true&theme=dark&hide_border=true&card_width=800" alt="HolmDigital Stats" />
+    <img src="https://img.shields.io/badge/HolmDigital-Sovereign_Cloud_%26_Open_Standards-007ACC?style=for-the-badge&logo=github&logoColor=white" alt="HolmDigital Org" />
   </a>
 </div>
 
