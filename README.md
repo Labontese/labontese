@@ -7,6 +7,15 @@ Chief Innovation Architect and Developer focused on high-availability, hybrid-in
   <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git,nginx,react" />
 </div>
 
+## 🏗️ Architected Ecosystem (@holmdigital)
+*Lead Architect & Developer for the [HolmDigital A11y Suite](https://github.com/holmdigital/a11y-hd).*
+
+| Package | Role | Tech Stack | Distribution |
+| :--- | :--- | :--- | :--- |
+| **[`@holmdigital/engine`](https://www.npmjs.com/package/@holmdigital/engine)** | 🧠 **Architect** | <img src="https://skillicons.dev/icons?i=ts,nodejs,docker" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/engine?style=flat-square&color=CB3837) |
+| **[`@holmdigital/components`](https://www.npmjs.com/package/@holmdigital/components)** | 🎨 **Lead Dev** | <img src="https://skillicons.dev/icons?i=react,tailwind,ts" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/components?style=flat-square&color=007ACC) |
+| **[`@holmdigital/standards`](https://www.npmjs.com/package/@holmdigital/standards)** | ⚖️ **Maintainer** | <img src="https://skillicons.dev/icons?i=json,md" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/standards?style=flat-square&color=black) |
+
 ## Enterprise Networking & Infrastructure
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
