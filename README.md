@@ -1,13 +1,31 @@
-# tech-visionary @ labontese <!-- 👋 -->
-
-Chief Innovation Architect and Developer focused on high-availability, hybrid-infrastructure environments, and regulatory-compliant software ecosystems. I manage a geo-redundant infrastructure across Hetzner (Production) and a sophisticated Homelab (Hot-Standby).
-
-## Tech Stack
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git,nginx,react" />
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7&width=435&lines=Initializing+labontese.sys...;Loading+Architect+Modules...;System+Online." alt="Typing SVG" />
+  </a>
 </div>
 
-## 🏗️ Architected Ecosystem (@holmdigital)
+<br />
+
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <h3>🛠️ Core Modules (Tech Stack)</h3>
+      <div align="center">
+        <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,ansible,grafana,postgres,ts,python,cloudflare,git,nginx,react&perline=6" />
+      </div>
+    </td>
+    <td valign="top" width="50%">
+      <h3>📊 Traffic Analysis (Status)</h3>
+      <div align="center">
+        <a href="https://github.com/labontese">
+          <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&count_private=true" height="135" />
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+### 🏗️ Architected Ecosystem (@holmdigital)
 *Lead Architect & Developer for the [HolmDigital A11y Suite](https://github.com/holmdigital/a11y-hd).*
 
 | Package | Role | Tech Stack | Distribution |
@@ -15,6 +33,18 @@ Chief Innovation Architect and Developer focused on high-availability, hybrid-in
 | **[`@holmdigital/engine`](https://www.npmjs.com/package/@holmdigital/engine)** | 🧠 **Architect** | <img src="https://skillicons.dev/icons?i=ts,nodejs,docker" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/engine?style=flat-square&color=CB3837) |
 | **[`@holmdigital/components`](https://www.npmjs.com/package/@holmdigital/components)** | 🎨 **Lead Dev** | <img src="https://skillicons.dev/icons?i=react,tailwind,ts" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/components?style=flat-square&color=007ACC) |
 | **[`@holmdigital/standards`](https://www.npmjs.com/package/@holmdigital/standards)** | ⚖️ **Maintainer** | <img src="https://skillicons.dev/icons?i=json,md" /> | ![NPM Version](https://img.shields.io/npm/v/@holmdigital/standards?style=flat-square&color=black) |
+
+<br/>
+
+### 🏛️ Governance & Operations
+> **Lead Developer** @ [`github.com/holmdigital`](https://github.com/holmdigital)  
+> *Orchestrating the sovereign cloud initiative and open standards.*
+
+<br/>
+
+<details>
+<summary><b>📋 View Infrastructure Logs (Network Topology & Specs)</b></summary>
+<br/>
 
 ## Enterprise Networking & Infrastructure
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
@@ -41,15 +71,10 @@ A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802
 - **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
 - **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
 
-## 📊 Terminal Metrics
+</details>
 
 <div align="center">
   <a href="https://github.com/labontese">
-    <img src="https://github-readme-stats.vercel.app/api?username=labontese&show_icons=true&theme=dark&hide_border=true" alt="GitHub Stats" height="180" />
-  </a>
-  <a href="https://github.com/labontese">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=dark&hide_border=true" alt="Streak Stats" height="180" />
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=dark&hide_border=true&background=0d1117" alt="Streak Stats" height="150" />
   </a>
 </div>
-
----
