@@ -40,7 +40,7 @@
 
 <div align="center">
   <a href="https://github.com/holmdigital">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=holmdigital&theme=dark&hide_border=true&background=0d1117&card_width=800" alt="HolmDigital Streak" />
+    <img src="https://github-readme-stats.vercel.app/api?username=holmdigital&show_icons=true&theme=dark&hide_border=true&card_width=800" alt="HolmDigital Stats" />
   </a>
 </div>
 
