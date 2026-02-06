@@ -54,7 +54,38 @@
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
 ### 🏗️ Global Architecture
-![Global Architecture](assets/topology_diagram_v7.png)
+![Global Architecture](assets/network_render_3d.png)
+
+#### 🗺️ Logical Topology
+```mermaid
+graph TD
+    %% Nodes
+    WAN((☁️ Internet))
+    FW[🔒 pfSense<br/>Dell R240]
+    Core[⚡ Switch Stack<br/>Juniper EX4200/Quanta]
+    
+    subgraph Compute ["🔥 Compute Cluster"]
+        Prox[Cluster<br/>Dell R730XD]
+        K8s[Kubernetes<br/>K3s Nodes]
+    end
+    
+    subgraph Storage ["💾 Storage Array"]
+        NAS[Truenas<br/>Dell T430]
+        PBS[Backup<br/>PBS]
+    end
+
+    %% Edge Connections
+    WAN <==> FW
+    FW <==> Core
+
+    %% Infrastructure Connections
+    Core == 10Gb Fiber ==> Prox
+    Core == 10Gb Fiber ==> NAS
+    
+    %% Internal Links
+    Prox -.-> K8s
+    NAS -.-> PBS
+```
 
 ### ⚡ Technical Specifications
 - **Core Switching**: ![Juniper](https://img.shields.io/badge/Juniper-EX4200_VC-blue?style=flat-square&logo=junipernetworks&logoColor=white) ![Quanta](https://img.shields.io/badge/Quanta-LB6M-black?style=flat-square) (24x 10GbE SFP+)
