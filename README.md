@@ -46,8 +46,7 @@
 
 <br/>
 
-<details>
-<summary><b>📋 View Infrastructure Logs (Network Topology & Specs)</b></summary>
+
 <br/>
 
 ## Enterprise Networking & Infrastructure
@@ -106,7 +105,7 @@ graph TD
 - **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
 - **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
 
-</details>
+
 
 <div align="center">
   <a href="https://github.com/labontese">
