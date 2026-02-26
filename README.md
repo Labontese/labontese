@@ -53,7 +53,7 @@
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
 
 ### 🏗️ Global Architecture
-![Global Architecture](assets/network_render_3d.png)
+![Global Architecture](assets/network_render_3d.jpg)
 
 #### 🗺️ Logical Topology
 ```mermaid
@@ -105,10 +105,3 @@ graph TD
 - **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
 - **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
 
-
-
-<div align="center">
-  <a href="https://github.com/labontese">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=labontese&theme=dark&hide_border=true&background=0d1117" alt="Streak Stats" height="150" />
-  </a>
-</div>
