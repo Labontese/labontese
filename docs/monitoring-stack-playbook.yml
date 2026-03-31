@@ -1,0 +1,331 @@
+---
+# monitoring-stack/site.yml
+# Deploy Prometheus + Grafana + Node Exporter monitoring stack
+# Usage: ansible-playbook -i inventory.yml site.yml
+
+- name: Deploy monitoring stack
+  hosts: monitoring
+  become: true
+  vars:
+    # Versions
+    prometheus_version: "2.53.0"
+    grafana_version: "11.1.0"
+    node_exporter_version: "1.8.1"
+
+    # Paths
+    monitoring_base: /opt/monitoring
+    prometheus_data: /opt/monitoring/prometheus/data
+    grafana_data: /opt/monitoring/grafana/data
+
+    # Prometheus config
+    prometheus_port: 9090
+    grafana_port: 3000
+    node_exporter_port: 9100
+
+    # Retention
+    prometheus_retention: "30d"
+
+    # Grafana admin (override in vault for production)
+    grafana_admin_user: admin
+    grafana_admin_password: "{{ vault_grafana_password | default('changeme') }}"
+
+    # Targets to scrape (add your servers here)
+    prometheus_targets:
+      - name: localhost
+        address: "localhost:9100"
+      - name: webserver
+        address: "10.0.1.10:9100"
+      - name: dbserver
+        address: "10.0.1.20:9100"
+
+  tasks:
+    # ==========================================
+    # Prerequisites
+    # ==========================================
+    - name: Install required packages
+      apt:
+        name:
+          - docker.io
+          - docker-compose-v2
+          - python3-docker
+        state: present
+        update_cache: true
+
+    - name: Ensure Docker is running
+      systemd:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Create monitoring directories
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - "{{ monitoring_base }}"
+        - "{{ monitoring_base }}/prometheus"
+        - "{{ prometheus_data }}"
+        - "{{ monitoring_base }}/grafana"
+        - "{{ grafana_data }}"
+        - "{{ monitoring_base }}/grafana/provisioning"
+        - "{{ monitoring_base }}/grafana/provisioning/datasources"
+        - "{{ monitoring_base }}/grafana/provisioning/dashboards"
+        - "{{ monitoring_base }}/grafana/dashboards"
+
+    # ==========================================
+    # Prometheus configuration
+    # ==========================================
+    - name: Deploy Prometheus config
+      copy:
+        dest: "{{ monitoring_base }}/prometheus/prometheus.yml"
+        mode: "0644"
+        content: |
+          global:
+            scrape_interval: 15s
+            evaluation_interval: 15s
+
+          scrape_configs:
+            - job_name: "prometheus"
+              static_configs:
+                - targets: ["localhost:9090"]
+
+            - job_name: "node_exporter"
+              static_configs:
+                - targets:
+                  {% for target in prometheus_targets %}
+                    - "{{ target.address }}"  # {{ target.name }}
+                  {% endfor %}
+
+            - job_name: "docker"
+              static_configs:
+                - targets: ["host.docker.internal:9323"]
+      notify: restart prometheus
+
+    # ==========================================
+    # Grafana provisioning
+    # ==========================================
+    - name: Deploy Grafana datasource provisioning
+      copy:
+        dest: "{{ monitoring_base }}/grafana/provisioning/datasources/prometheus.yml"
+        mode: "0644"
+        content: |
+          apiVersion: 1
+          datasources:
+            - name: Prometheus
+              type: prometheus
+              access: proxy
+              url: http://prometheus:9090
+              isDefault: true
+              editable: false
+      notify: restart grafana
+
+    - name: Deploy Grafana dashboard provisioning
+      copy:
+        dest: "{{ monitoring_base }}/grafana/provisioning/dashboards/default.yml"
+        mode: "0644"
+        content: |
+          apiVersion: 1
+          providers:
+            - name: Default
+              orgId: 1
+              folder: ""
+              type: file
+              disableDeletion: false
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards
+                foldersFromFilesStructure: false
+      notify: restart grafana
+
+    - name: Deploy Node Exporter dashboard
+      copy:
+        dest: "{{ monitoring_base }}/grafana/dashboards/node-exporter.json"
+        mode: "0644"
+        content: |
+          {
+            "annotations": { "list": [] },
+            "editable": true,
+            "fiscalYearStartMonth": 0,
+            "graphTooltip": 0,
+            "id": null,
+            "links": [],
+            "panels": [
+              {
+                "title": "CPU Usage",
+                "type": "timeseries",
+                "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+                "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+                "targets": [{
+                  "expr": "100 - (avg by(instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
+                  "legendFormat": "{{ "{{instance}}" }}"
+                }],
+                "fieldConfig": {
+                  "defaults": { "unit": "percent", "max": 100, "min": 0 }
+                }
+              },
+              {
+                "title": "Memory Usage",
+                "type": "timeseries",
+                "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+                "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+                "targets": [{
+                  "expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100",
+                  "legendFormat": "{{ "{{instance}}" }}"
+                }],
+                "fieldConfig": {
+                  "defaults": { "unit": "percent", "max": 100, "min": 0 }
+                }
+              },
+              {
+                "title": "Disk Usage",
+                "type": "timeseries",
+                "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+                "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+                "targets": [{
+                  "expr": "(1 - (node_filesystem_avail_bytes{mountpoint=\"/\"} / node_filesystem_size_bytes{mountpoint=\"/\"})) * 100",
+                  "legendFormat": "{{ "{{instance}}" }}"
+                }],
+                "fieldConfig": {
+                  "defaults": { "unit": "percent", "max": 100, "min": 0 }
+                }
+              },
+              {
+                "title": "Network Traffic",
+                "type": "timeseries",
+                "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+                "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+                "targets": [
+                  {
+                    "expr": "irate(node_network_receive_bytes_total{device!~\"lo|veth.*|br.*|docker.*\"}[5m]) * 8",
+                    "legendFormat": "{{ "{{instance}}" }} rx"
+                  },
+                  {
+                    "expr": "irate(node_network_transmit_bytes_total{device!~\"lo|veth.*|br.*|docker.*\"}[5m]) * 8",
+                    "legendFormat": "{{ "{{instance}}" }} tx"
+                  }
+                ],
+                "fieldConfig": {
+                  "defaults": { "unit": "bps" }
+                }
+              }
+            ],
+            "schemaVersion": 39,
+            "tags": ["node-exporter", "infrastructure"],
+            "templating": {
+              "list": [{
+                "name": "DS_PROMETHEUS",
+                "type": "datasource",
+                "query": "prometheus"
+              }]
+            },
+            "time": { "from": "now-6h", "to": "now" },
+            "title": "Node Exporter Overview",
+            "uid": "node-exporter-overview"
+          }
+      notify: restart grafana
+
+    # ==========================================
+    # Docker Compose
+    # ==========================================
+    - name: Deploy Docker Compose file
+      copy:
+        dest: "{{ monitoring_base }}/docker-compose.yml"
+        mode: "0644"
+        content: |
+          services:
+            prometheus:
+              image: prom/prometheus:v{{ prometheus_version }}
+              container_name: prometheus
+              restart: unless-stopped
+              ports:
+                - "{{ prometheus_port }}:9090"
+              volumes:
+                - {{ monitoring_base }}/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+                - {{ prometheus_data }}:/prometheus
+              command:
+                - "--config.file=/etc/prometheus/prometheus.yml"
+                - "--storage.tsdb.path=/prometheus"
+                - "--storage.tsdb.retention.time={{ prometheus_retention }}"
+                - "--web.enable-lifecycle"
+              extra_hosts:
+                - "host.docker.internal:host-gateway"
+              networks:
+                - monitoring
+
+            grafana:
+              image: grafana/grafana:{{ grafana_version }}
+              container_name: grafana
+              restart: unless-stopped
+              ports:
+                - "{{ grafana_port }}:3000"
+              volumes:
+                - {{ grafana_data }}:/var/lib/grafana
+                - {{ monitoring_base }}/grafana/provisioning:/etc/grafana/provisioning:ro
+                - {{ monitoring_base }}/grafana/dashboards:/var/lib/grafana/dashboards:ro
+              environment:
+                GF_SECURITY_ADMIN_USER: "{{ grafana_admin_user }}"
+                GF_SECURITY_ADMIN_PASSWORD: "{{ grafana_admin_password }}"
+                GF_USERS_ALLOW_SIGN_UP: "false"
+                GF_SERVER_ROOT_URL: "http://localhost:{{ grafana_port }}"
+              depends_on:
+                - prometheus
+              networks:
+                - monitoring
+
+            node-exporter:
+              image: prom/node-exporter:v{{ node_exporter_version }}
+              container_name: node-exporter
+              restart: unless-stopped
+              ports:
+                - "{{ node_exporter_port }}:9100"
+              volumes:
+                - /proc:/host/proc:ro
+                - /sys:/host/sys:ro
+                - /:/rootfs:ro
+              command:
+                - "--path.procfs=/host/proc"
+                - "--path.sysfs=/host/sys"
+                - "--path.rootfs=/rootfs"
+                - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
+              networks:
+                - monitoring
+
+          networks:
+            monitoring:
+              driver: bridge
+      notify: start stack
+
+    # ==========================================
+    # Firewall
+    # ==========================================
+    - name: Allow monitoring ports through UFW
+      ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop:
+        - "{{ prometheus_port }}"
+        - "{{ grafana_port }}"
+        - "{{ node_exporter_port }}"
+
+    # ==========================================
+    # Handlers
+    # ==========================================
+  handlers:
+    - name: restart prometheus
+      community.docker.docker_compose_v2:
+        project_src: "{{ monitoring_base }}"
+        services: ["prometheus"]
+        state: restarted
+
+    - name: restart grafana
+      community.docker.docker_compose_v2:
+        project_src: "{{ monitoring_base }}"
+        services: ["grafana"]
+        state: restarted
+
+    - name: start stack
+      community.docker.docker_compose_v2:
+        project_src: "{{ monitoring_base }}"
+        state: present
