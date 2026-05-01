@@ -60,6 +60,41 @@
 
 ---
 
+## 📰 Patch Window
+
+<div align="center">
+  <a href="https://patchwindow.serverdigital.net">
+    <img src="https://img.shields.io/badge/Patch_Window-Linux_%7C_DevOps_%7C_AI-0a1628?style=for-the-badge&labelColor=0a1628&color=d4a017&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGcgZmlsbD0iY3VycmVudENvbG9yIj48cmVjdCB4PSI5IiB5PSI1IiB3aWR0aD0iMyIgaGVpZ2h0PSIyMiIgcng9IjEiLz48cmVjdCB4PSI2IiB5PSI4IiB3aWR0aD0iOSIgaGVpZ2h0PSIzIiByeD0iMSIvPjxyZWN0IHg9IjYiIHk9IjgiIHdpZHRoPSIzIiBoZWlnaHQ9IjYiIHJ4PSIxIi8+PHJlY3QgeD0iNiIgeT0iMTQuNSIgd2lkdGg9IjkiIGhlaWdodD0iMyIgcng9IjEiLz48cmVjdCB4PSI2IiB5PSIyMSIgd2lkdGg9IjkiIGhlaWdodD0iMyIgcng9IjEiLz48cmVjdCB4PSIxMiIgeT0iMTgiIHdpZHRoPSIzIiBoZWlnaHQ9IjYiIHJ4PSIxIi8+PHJlY3QgeD0iMTkiIHk9IjEwIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMCIgcng9IjEiLz48cmVjdCB4PSIxOSIgeT0iMjMiIHdpZHRoPSI4IiBoZWlnaHQ9IjMiIHJ4PSIxIi8+PC9nPjwvc3ZnPg==&logoColor=d4a017" alt="Patch Window publication" />
+  </a>
+  <a href="https://patchwindow.serverdigital.net/feed.xml">
+    <img src="https://img.shields.io/badge/RSS-Subscribe-d4a017?style=for-the-badge&labelColor=0a1628&logo=rss&logoColor=d4a017" alt="Subscribe via RSS" />
+  </a>
+  <a href="https://patchwindow.serverdigital.net">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fpatchwindow.serverdigital.net%2Fapi%2Fbadge%2Flatest" alt="Latest article" />
+  </a>
+  <a href="https://patchwindow.serverdigital.net">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fpatchwindow.serverdigital.net%2Fapi%2Fbadge%2Farticles-count" alt="Articles published" />
+  </a>
+</div>
+
+<br/>
+
+I write [Patch Window](https://patchwindow.serverdigital.net), a publication on Linux, networking, containers, DevOps, and AI in production environments. It's written from the homelab described below, not from a vendor brief. Three formats: deep-dives when there's something worth working through, hot-takes when the industry is wrong about something, and briefs when a release matters and most coverage is just the changelog rephrased.
+
+[Site](https://patchwindow.serverdigital.net) · [RSS](https://patchwindow.serverdigital.net/feed.xml) · [About](https://patchwindow.serverdigital.net/about)
+
+Selected articles:
+
+| Format | Title | What it covers |
+| :--- | :--- | :--- |
+| ![Deep-dive](https://img.shields.io/badge/DEEP--DIVE-2d6a4f?style=flat-square&labelColor=2d6a4f) | [Local AI in 2026: what's on the box](https://patchwindow.serverdigital.net/deep-dive/local-ai-2026-on-the-box) | Ollama, SillyTavern, Forge on a single RTX 3060. Models, VRAM math, what changed this year. |
+| ![Deep-dive](https://img.shields.io/badge/DEEP--DIVE-2d6a4f?style=flat-square&labelColor=2d6a4f) | [K3s on Proxmox: what actually breaks](https://patchwindow.serverdigital.net/deep-dive/k3s-on-proxmox-production-lessons) | Three-node Proxmox cluster, K3s in VMs, etcd memory, Flannel quirks, Ceph contention. |
+| ![Deep-dive](https://img.shields.io/badge/DEEP--DIVE-2d6a4f?style=flat-square&labelColor=2d6a4f) | [@holmdigital/engine: WCAG to national law](https://patchwindow.serverdigital.net/deep-dive/holmdigital-engine-wcag-compliance-tool) | Open-source scanner that maps WCAG failures to legal exposure across 16 countries. |
+| ![Deep-dive](https://img.shields.io/badge/DEEP--DIVE-2d6a4f?style=flat-square&labelColor=2d6a4f) | [Stop calling it an AI assistant. Build a team.](https://patchwindow.serverdigital.net/deep-dive/stop-calling-it-an-ai-assistant-build-a-team) | Designing Claude Code agent teams that don't collapse under their own prompt weight. |
+| ![Hot-take](https://img.shields.io/badge/HOT--TAKE-d4a017?style=flat-square&labelColor=d4a017) | [Your pipeline skills are not your identity](https://patchwindow.serverdigital.net/hot-take/your-pipeline-skills-are-not-your-identity) | Platform engineering, AIOps, and why DevOps engineers are reacting the way they are. |
+
+---
+
 ## 🌐 Enterprise Networking & Infrastructure
 
 A comprehensive L2/L3 environment leveraging 10G SFP+ backbones and advanced 802.1Q segmentation.
