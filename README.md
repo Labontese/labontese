@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-  <em>Infrastructure architect & developer — building sovereign cloud platforms, accessibility tooling, and enterprise-grade homelab environments.</em>
+  <em>Infrastructure architect & operator — sovereign cloud platforms, accessibility tooling, and enterprise-grade homelabs.<br/>Hardware at heart, developer by quirk: I keep systems running and build the automation, observability, and tooling that make operations smart.</em>
 </p>
 
 <div align="center">
@@ -32,6 +32,19 @@
     </td>
   </tr>
 </table>
+
+---
+
+## 🎓 Formal Track — Leveling Up
+
+**IT Infrastructure Secure Cloud** @ [Chas Academy](https://chasacademy.se) · 2026–2028 · 425 YH credits
+
+`Linux` · `Networking & Security` · `Cloud (AWS/Azure/GCP)` · `Containers` · **`Datacenter Hardware & Ops`** · `Automation`
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Open_to-LIA_%2F_Internship_2027-2d6a4f?style=for-the-badge" alt="Open to LIA / Internship 2027" />
+  <img src="https://img.shields.io/badge/Location-J%C3%B6nk%C3%B6ping_%26_Remote-0d1117?style=for-the-badge" alt="Jönköping & Remote" />
+</div>
 
 ---
 
@@ -155,6 +168,22 @@ graph TD
 - **Automation**: ![Ansible](https://img.shields.io/badge/Ansible-IaC-EE0000?style=flat-square&logo=ansible&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-Automation-5391FE?style=flat-square&logo=powershell&logoColor=white)
 - **IPAM**: ![phpIPAM](https://img.shields.io/badge/phpIPAM-Management-green?style=flat-square)
 - **Version Control**: ![Forgejo](https://img.shields.io/badge/Forgejo-Self_Hosted-F05032?style=flat-square&logo=gitea&logoColor=white)
+
+---
+
+## ☁️ Production Operations — Beyond the Lab
+
+The homelab is where I learn; this is where it ships. I design & operate **Holm Digital's production stack** on a Hetzner EX44 dedicated server:
+
+| Layer | Stack |
+| :--- | :--- |
+| **Edge & access** | Traefik (auto-SSL) · Authelia 2FA · UFW · Fail2ban |
+| **Workloads** | 21 Dockerized services across 3 isolated networks |
+| **Observability** | Prometheus · Loki · Grafana · Alloy |
+| **Resilience** | age-encrypted offsite backups · GitHub Actions CI/CD · Watchtower |
+| **Smart ops** | n8n automation · local LLM (Ollama) for analysis |
+
+> Same discipline as the lab — segmented networks, full observability, infrastructure-as-code — but **live, monitored, and backed up.**
 
 ---
 
