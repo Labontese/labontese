@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="assets/banner.svg" alt="Daniel Gustafsson — Infrastructure Operator · Hardware at heart, developer by quirk" width="100%" />
+</div>
+
+<div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=F7F7F7&width=435&lines=Initializing+labontese.sys...;Loading+Architect+Modules...;System+Online.&center=true&vCenter=true" alt="Typing SVG" />
 </div>
 
